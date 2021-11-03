@@ -1,0 +1,27 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+    {% include 'home/menu.html' %}
+</head>
+<body>
+<div class="container">
+    <img src="{% static 'img/logo.png' %}" width="100px" alt="">
+    <br>
+    <a href="{% url 'produto' %}">Produtos</a>
+    <h2>Home</h2>
+    <form action="#" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+        <button class="btn btn-success" type="submit">Enviar</button>
+        {% endbuttons %}
+
+    </form>
+
+</div>
+</body>
+</html>
